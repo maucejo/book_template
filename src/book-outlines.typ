@@ -1,4 +1,5 @@
 #import "book-defaults.typ": *
+#import "book-helper.typ": *
 
 // Table of contents
 #let tableofcontents = {

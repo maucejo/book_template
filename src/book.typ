@@ -5,6 +5,7 @@
 #import "book-outlines.typ": *
 #import "book-components.typ": *
 #import "book-theming.typ": *
+#import "book-tufte.typ": *
 #import "book-helper.typ": *
 
 // Template
@@ -21,6 +22,7 @@
 
   let config-book = default-book-config + book-config
   states.theme.update(config-book.theme)
+  states.layout.update(config-book.layout)
 
   let book-colors = default-book-config.colors + config-book.colors
   states.colors.update(book-colors)
@@ -47,7 +49,12 @@
   states.localization.update(localization)
 
   // Headings
+  // let dx = 0cm
+  // if config-book.layout.contains("tufte") {
+  //   dx = -0.5cm
+  // }
   show: heading-level1
+  // show heading.where(level: 1): it => fullwidth(dx: dx)[#it]
   show: heading-level2
   show: heading-level3
   show: headings-on-odd-page
@@ -132,15 +139,17 @@
 
   // Page layout
   set page(
-    paper: paper-size,
-    header: page-header,
-    footer: page-footer
-  ) if config-book.theme.contains("modern")
+    margin: (
+      left: 1.5cm,
+      right: 7cm
+    )
+  ) if config-book.layout.contains("tufte")
 
   set page(
     paper: paper-size,
     header: page-header,
-  ) if config-book.theme.contains("fancy") or config-book.theme.contains("classic")
+    footer: page-footer
+  )
 
   body
 }
