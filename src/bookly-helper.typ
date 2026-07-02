@@ -110,7 +110,8 @@
   year: datetime.today().year(),
   cover: none,
   logo: none,
-  version-usage: none
+  version-usage: none,
+  show-cover-author: false
 ) = context {
   let header = {
     box(fill: states.colors.get().primary, width: 100%, inset: 1em)[
@@ -159,7 +160,7 @@
           v(0.5em)
         }
 
-        #if states.show-cover-author.get() {
+        #if show-cover-author {
           v(0.5em)
           text(size: 1.5em)[#states.author.get()]
         }
