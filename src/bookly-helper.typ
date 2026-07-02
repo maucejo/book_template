@@ -111,7 +111,7 @@
   cover: none,
   logo: none,
   version-usage: none,
-  show-cover-author: false
+  show-cover-author: true
 ) = context {
   let header = {
     box(fill: states.colors.get().primary, width: 100%, inset: 1em)[
