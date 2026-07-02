@@ -106,11 +106,9 @@ After importing `bookly`, you have to initialize the template by a show rule wit
 
 * `marginalia:0.3.1`: for tufte layout.
 
-* `hydra:0.6.2` : for bibliography management.
+* `hydra:0.6.3` : for bibliography management.
 
 * `equate:0.3.2` : for advanced equation numbering.
-
-* `itemize:0.2.0"`: for lists and enumerations customization.
 
 * `showybox:2.0.4` : for custom boxes.
 

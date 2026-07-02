@@ -102,6 +102,7 @@ After importing #package[bookly], you have to initialize the template by a show 
 		]
 
 		#argument("fonts", default: "default-fonts", types: "dict")[Fonts used in the document. It contains the following keys:
+			- size #dtype(str) -- Font size (default: `"10pt"`)
 			- `body` #dtype(str) -- Font used for the body text (default: `"New Computer Modern"`)
 			- `math` #dtype(str) -- Font used for mathematical equations (default: `"New Computer Modern Math"`)
 			- `raw` #dtype(str) -- Font used for raw text (default: `"DejaVu Sans Mono"`)
@@ -122,6 +123,8 @@ After importing #package[bookly], you have to initialize the template by a show 
 			- `alt-margins` #dtype(bool) -- If `true`, margins are alternated for odd and even pages when `tufte` is enabled (default: `false`)
 			- `paper-size` #dtype(str) -- Size of the paper (default: `"a4"`).
 			- `par-indent` #dtype(bool) -- If `true`, paragraphs are indented (default: `false`)
+
+			#info-alert[If `part-numbering` is set to #dtype(none), the parts are not numbered. If it is set to `"1"`, the parts are numbered with Arabic numerals. If it is set to `"I"`, the parts are numbered with Roman numerals. Other numbering patterns are possible.]
 		]
 ]
 
@@ -961,9 +964,8 @@ Then, you can initialize the template with your custom theme as follows:
 The `bookly` template relies on several #Typst packages to provide additional functionalities:
 #v(0.5em)
 - `marginalia:0.3.1`: for tufte layout.
-- `hydra:0.6.2` : for bibliography management.
+- `hydra:0.6.3` : for bibliography management.
 - `equate:0.3.3` : for advanced equation numbering.
-- `itemize:0.2.0"`: for lists and enumerations customization.
 - `showybox:2.0.4` : for custom boxes.
 - `suboutline:0.3.0` : for mini tables of contents in chapters.
 - `subpar:0.2.2` : for subfigures.
