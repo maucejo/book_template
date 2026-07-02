@@ -10,6 +10,7 @@
 #show: bookly.with(
   author: "Author Name",
   fonts: (
+    // size: 9pt,
     body: "Lato",
     math: "Lete Sans Math"
   ),
@@ -32,7 +33,8 @@
   ),
   config-options: (
     open-right: true,
-    par-indent: true,
+    par-indent: false,
+    // paper-size: "a5",
     // alt-margins: true,
     // part-numbering: none
   )
@@ -54,29 +56,29 @@
 
 #include "chapters/ch_main.typ"
 
-#part("Second part")
+// #part("Second part")
 
-#show: appendix
+// #show: appendix
 
-#include "appendix/app_main.typ"
+// #include "appendix/app_main.typ"
 
-// #bibliography("bibliography/sample.yml")
+// // #bibliography("bibliography/sample.yml")
 #bibliography("bibliography/sample.bib")
 
-#let abstracts-fr-en = (
-  (
-    title: [#set text(lang: "fr"); Résumé :],
-    text: [#lorem(100)]
-  ),
-  (
-    title: [#set text(lang: "en", region: "gb"); Abstract:],
-    text: [#lorem(100)]
-  ),
-)
+// #let abstracts-fr-en = (
+//   (
+//     title: [#set text(lang: "fr"); Résumé :],
+//     text: [#lorem(100)]
+//   ),
+//   (
+//     title: [#set text(lang: "en", region: "gb"); Abstract:],
+//     text: [#lorem(100)]
+//   ),
+// )
 
-#let logos = (
-  image("images/typst-logo.svg", width: 75%),
-  image("images/typst-logo.svg", width: 75%)
-)
+// #let logos = (
+//   image("images/typst-logo.svg", width: 75%),
+//   image("images/typst-logo.svg", width: 75%)
+// )
 
-#back-cover(abstracts: abstracts-fr-en, logo: logos)
+// #back-cover(abstracts: abstracts-fr-en, logo: logos)

@@ -25,4 +25,4 @@ $
 
 #lorem(500)#note(lorem(10))
 
-#fullwidth(lorem(500))
+#wideblock(lorem(500))

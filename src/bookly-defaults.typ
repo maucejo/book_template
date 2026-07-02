@@ -1,6 +1,4 @@
 #let fig-supplement = [Figure]
-#let text-size = 11pt
-#let paper-size = "a4"
 #let par-indent = 1.5em
 
 #let states = (
@@ -19,6 +17,7 @@
   num-pattern-subfig: state("num-pattern-subfig", "1.1a"),
   open-right: state("open-right", true),
   page-numbering: state("page-numbering", "1/1"),
+  paper-size: state("paper-size", "a4"),
   par-indent: state("par-indent", false),
   part-numbering: state("part-numbering", "1"),
   sidenotecounter: counter("sidenotecounter"),
@@ -34,9 +33,11 @@
   open-right: true,
   alt-margins: false,
   par-indent: false,
+  paper-size: "a4",
 )
 
 #let default-fonts = (
+  size: 11pt,
   body: "New Computer Modern",
   math: "New Computer Modern Math",
   raw: "DejaVu Sans Mono",

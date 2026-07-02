@@ -28,7 +28,7 @@
   ),
   config-options: (
     open-right: false,
-    alt-margins: true
+    alt-margins: true,
   )
 )
 
@@ -50,9 +50,9 @@
 
 #part("Second part")// #part("Second part")
 
-// #show: appendix
+#show: appendix
 
-// #include "appendix_tufte/app_main_tufte.typ"
+#include "appendix_tufte/app_main_tufte.typ"
 
 // #bibliography("bibliography/sample.yml")
 #bibliography("bibliography/sample.bib")

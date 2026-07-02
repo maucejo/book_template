@@ -39,11 +39,13 @@
   let book-options = default-config-options + config-options
   states.alt-margins.update(book-options.alt-margins)
   states.open-right.update(book-options.open-right)
+  states.paper-size.update(book-options.paper-size)
   states.part-numbering.update(book-options.part-numbering)
+  states.par-indent.update(book-options.par-indent)
 
   // Fonts
   let bookly-fonts = default-fonts + fonts
-  set text(font: bookly-fonts.body, lang: lang, size: text-size, ligatures: false)
+  set text(font: bookly-fonts.body, lang: lang, size: bookly-fonts.size, ligatures: false)
 
   // Math font
   show math.equation: set text(font: bookly-fonts.math, stylistic-set: 1)
@@ -51,13 +53,12 @@
   show selector(<nonum-eq>): set math.equation(numbering: none)
 
   // Raw font
-  show raw: set text(font: bookly-fonts.raw, size: 0.8*text-size)
+  show raw: set text(font: bookly-fonts.raw, size: 0.8*bookly-fonts.size)
 
   // Equations
   show: equate.with(breakable: true, sub-numbering: true)
 
-  // Paragraphs 
-  states.par-indent.update(book-options.par-indent)
+  // Paragraphs
   set par(first-line-indent: (amount: par-indent, all: true)) if book-options.par-indent
   set par(justify: true)
 

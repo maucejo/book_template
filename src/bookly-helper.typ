@@ -127,7 +127,7 @@
   }
 
   set page(
-    paper: paper-size,
+    paper: states.paper-size.get(),
     header: header,
     footer: footer,
     margin: (left: 0em, right:0em, top: 4em, bottom: 4em)
@@ -175,7 +175,7 @@
     ]
 
     set page(
-      paper: paper-size,
+      paper: states.paper-size.get(),
       header: none,
       footer: none,
       margin: auto
