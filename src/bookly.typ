@@ -42,7 +42,7 @@
   states.paper-size.update(book-options.paper-size)
   states.part-numbering.update(book-options.part-numbering)
   states.par-indent.update(book-options.par-indent)
-  states.show-cover-author.update(book-options.show-cover-author)
+  // states.show-cover-author.update(book-options.show-cover-author)
 
   // Fonts
   let bookly-fonts = default-fonts + fonts
