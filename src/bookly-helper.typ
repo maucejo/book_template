@@ -159,8 +159,10 @@
           v(0.5em)
         }
 
-        #v(0.5em)
-        #text(size: 1.5em)[#states.author.get()]
+        #if states.show-cover-author.get() {
+          v(0.5em)
+          text(size: 1.5em)[#states.author.get()]
+        }
       ]
 
       #move(dx: 2em)[

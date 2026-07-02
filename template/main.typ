@@ -34,6 +34,7 @@
   config-options: (
     open-right: true,
     par-indent: false,
+    show-cover-author: true,
     // paper-size: "a5",
     // alt-margins: true,
     // part-numbering: none
