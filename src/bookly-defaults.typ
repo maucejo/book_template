@@ -4,7 +4,7 @@
 #let states = (
   alt-margins: state("alt-margins", false),
   author: state("author", none),
-  show-cover-author: state("show-cover-author", true),
+  // show-cover-author: state("show-cover-author", true),
   colors: state("theme-colors"),
   counter-part: counter("part"),
   in-outline: state("in-outline", false),
