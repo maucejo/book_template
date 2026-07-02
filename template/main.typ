@@ -29,12 +29,13 @@
     institution: "Typst community",
     logo: image("images/typst-logo.svg"),
     cover: image("images/book-cover.jpg", width: 45%),
+    show-cover-author: true,
     version-usage: "This is a template for writing books with Typst. It is part of the Bookly project, which provides tools and themes for book production. The template includes features such as a title page, table of contents, list of figures and tables, and support for chapters and appendices. It also includes a bibliography section for citing sources."
   ),
   config-options: (
     open-right: true,
     par-indent: false,
-    show-cover-author: true,
+    // show-cover-author: true,
     // paper-size: "a5",
     // alt-margins: true,
     // part-numbering: none
