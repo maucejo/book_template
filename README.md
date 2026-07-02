@@ -1,6 +1,6 @@
 # Book template
 
-[![Generic badge](https://img.shields.io/badge/Version-4.0.1-cornflowerblue.svg)](https://github.com/maucejo/bookly/releases/tag/4.0.1)
+[![Generic badge](https://img.shields.io/badge/Version-4.1.0-cornflowerblue.svg)](https://github.com/maucejo/bookly/releases/tag/4.1.0)
 [![MIT License](https://img.shields.io/badge/License-MIT-forestgreen)](https://github.com/maucejo/book_template/blob/main/LICENSE)
 [![User Manual](https://img.shields.io/badge/doc-.pdf-mediumpurple)](https://github.com/maucejo/bookly/blob/main/docs/manual.pdf)
 
@@ -14,7 +14,7 @@ This section provides the minimal amount of information to get started with the 
 To use the `bookly` template, you need to include the following line at the beginning of your typ file:
 
 ```typ
-#import "@preview/bookly:4.0.1": *
+#import "@preview/bookly:4.1.0": *
 ```
 
 After importing `bookly`, you have to initialize the template by a show rule with the `#bookly()` command.
@@ -106,11 +106,9 @@ After importing `bookly`, you have to initialize the template by a show rule wit
 
 * `marginalia:0.3.1`: for tufte layout.
 
-* `hydra:0.6.2` : for bibliography management.
+* `hydra:0.6.3` : for bibliography management.
 
 * `equate:0.3.2` : for advanced equation numbering.
-
-* `itemize:0.2.0"`: for lists and enumerations customization.
 
 * `showybox:2.0.4` : for custom boxes.
 

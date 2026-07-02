@@ -13,7 +13,7 @@
 
 #show: mantys(
   name: "bookly.typ",
-  version: "4.0.1",
+  version: "4.1.0",
   authors: ("Mathieu Aucejo",),
 
   license: "MIT",
@@ -34,7 +34,7 @@
 
 To use the #package[bookly] template, you need to include the following line at the beginning of your `typ` file:
 #codesnippet[```typ
-#import "@preview/bookly:4.0.1": *
+#import "@preview/bookly:4.1.0": *
 ```
 ]
 
@@ -102,6 +102,7 @@ After importing #package[bookly], you have to initialize the template by a show 
 		]
 
 		#argument("fonts", default: "default-fonts", types: "dict")[Fonts used in the document. It contains the following keys:
+			- size #dtype(str) -- Font size (default: `"10pt"`)
 			- `body` #dtype(str) -- Font used for the body text (default: `"New Computer Modern"`)
 			- `math` #dtype(str) -- Font used for mathematical equations (default: `"New Computer Modern Math"`)
 			- `raw` #dtype(str) -- Font used for raw text (default: `"DejaVu Sans Mono"`)
@@ -120,6 +121,10 @@ After importing #package[bookly], you have to initialize the template by a show 
 			- `part-numbering` #dtype(str) -- Numbering pattern (default: "1")
 			- `open-right` #dtype(bool) -- If `true`, parts start on a right-hand page (default: `true`)
 			- `alt-margins` #dtype(bool) -- If `true`, margins are alternated for odd and even pages when `tufte` is enabled (default: `false`)
+			- `paper-size` #dtype(str) -- Size of the paper (default: `"a4"`).
+			- `par-indent` #dtype(bool) -- If `true`, paragraphs are indented (default: `false`)
+
+			#info-alert[If `part-numbering` is set to #dtype(none), the parts are not numbered. If it is set to `"1"`, the parts are numbered with Arabic numerals. If it is set to `"I"`, the parts are numbered with Roman numerals. Other numbering patterns are possible.]
 		]
 ]
 
@@ -346,7 +351,7 @@ For unnumbered chapters, you can simply use the #cmd("chapter-nonum") function. 
 == Section title <nonum-sec>
 ```
 ]
-#warning-alert[The `<nonum-sec>` label only works for sections and not for chapters. When applied to chapters, it breakes the global numbering of the document. For unnumbered chapters, use the #cmd("chapter-nonum") function. instead]
+#warning-alert[The `<nonum-sec>` label only works for sections and not for chapters. When applied to chapters, it breaks the global numbering of the document. For unnumbered chapters, use the #cmd("chapter-nonum") function. instead]
 
 == Tables of contents
 
@@ -430,6 +435,7 @@ The template provides several types of boxes to highlight different kinds of con
 - #cmd("important-box") for important information;
 - #cmd("proof-box") for proofs;
 - #cmd("question-box") for questions.
+- #cmd("code-box") for code snippets.
 
 #codesnippet[
 	#show math.equation: set text(font: "Lete Sans Math")
@@ -440,12 +446,15 @@ The template provides several types of boxes to highlight different kinds of con
 	#important-box[#lorem(10)]
 	#proof-box[#lorem(10)]
 	#question-box[#lorem(10)]
+	#code-box[#lorem(10)]
 	```
 ]
 
 #info-alert[The appearance of the boxes depends on the selected theme (see the "Themes gallery" section).]
 
 The information boxes described above are built using the #cmd("custom-box") function, which allows you to create custom boxes. This generic function takes the following parameters:
+
+#pagebreak()
 #command("custom-box",
 ..args(
 	title: none,
@@ -465,6 +474,7 @@ The information boxes described above are built using the #cmd("custom-box") fun
 	- #box-title(image("../src/resources/images/icons/report.svg", width: 1em), [: `"report"`])
 	- #box-title(image("../src/resources/images/icons/stop.svg", width: 1em), [: `"stop"`])
 	- #box-title(image("../src/resources/images/icons/tip.svg", width: 1em), [: `"tip"`])
+	- #box-title(image("../src/resources/images/icons/code.svg", width: 1em), [: `"code"`])
 	]
 
 	#argument("color", default: rgb(29, 144, 208), types: "color")[Box color.]
@@ -489,6 +499,7 @@ The template provides two functions to create title pages: one for a book and on
 )[
 	#argument("subtitle", default: "Book subtitle", types: "string")[Subtitle of the book.]
 
+	#colbreak()
 	#argument("edition", default: "First edition", types: "string")[Edition of the book.]
 
 	#argument("institution", default: "Institution", types: "string")[Name of the institution.]
@@ -582,7 +593,12 @@ The template provides two functions to create title pages: one for a book and on
 		role: "Reviewer"
 	),
 )
+```
+)
 
+#pagebreak()
+#codesnippet(
+```typ
 #show: book.with(
 	title-page: thesis-title-page(
 		supervisor: ("Supervisor A", "Supervisor B"),
@@ -621,6 +637,11 @@ A back cover of the document is automatically generated using the #cmd("back-cov
 						Cet article présente les objectifs, la méthodologie et les principaux résultats du travail.
 					]
 				),
+			```]
+
+			#colbreak()
+			#codesnippet[
+				```typ
 				(
 					title: [#set text(lang: "de"); Zusammenfassung],
 					text: [#set text(lang: "de")
@@ -648,6 +669,7 @@ A back cover of the document is automatically generated using the #cmd("back-cov
 	]
 ]
 
+#pagebreak()
 == Tufte layout <ss:tufte>
 
 When the `tufte` layout is selected, several customizations are applied to adapt the appearance of various elements (figures, tables, equations, etc.) to the Tufte style.
@@ -700,6 +722,7 @@ When the `tufte` layout is selected, several customizations are applied to adapt
 
 	#argument("dy", default: -1.5em, types: "length")[Vertical adjustment of the notecite position.]
 
+	#colbreak()
 	#argument("alignment", default: "baseline", types: "string")[Alignment of the notecite. Possible values are:
 	- `"top"`: Align the top of the notecite with the reference.
 	- `"caption-top"`: Align the top of the notecite with the main text baseline.
@@ -735,6 +758,49 @@ When the `tufte` layout is selected, several customizations are applied to adapt
 	]
 ]
 
+== Miscellaneous
+
+`bookly` provides several other helper functions to facilitate the writing of a book or a thesis and the creation of custom templates.
+
+#command("reset-counters", ..args())[
+	#argument(none)[Reset the counters for equations, figures, tables, sidenotes, and footnotes.
+	]
+]
+
+#pagebreak()
+#command("row-img", ..args(
+	"logo",
+))[
+	#argument("logo", types: "array")[
+		Array of images to display in a row.
+		#codesnippet[
+			```typ
+			#row-img(
+				image("path_to_image/logo1.png", width: 20%),
+				image("path_to_image/logo2.png", width: 20%),
+				image("path_to_image/logo3.png", width: 20%)
+			)
+			```
+		]
+	]
+]
+
+#command("noindent", ..args())[
+	#argument(none)[Disables the indentation of a given paragraph.
+		#codesnippet[
+			```typ
+			#noindent This paragraph will not be indented.
+			```
+		]
+	]
+]
+
+#command("partial-outline", ..args())[
+	#argument(none)[
+		Displays a partial outline of the document, showing only the current chapters and sections between the current part and the next one. This function is useful for creating a mini table of contents for a specific part of the document (see `obook` theme).
+	]
+]
+
 = Theming
 
 The theming system is designed to be flexible and customizable, allowing users to define their own themes.
@@ -745,7 +811,7 @@ To implement a custom theme, you have to define a function that includes the `sh
 #codesnippet[
 ```typ
 // my-theme.typ
-#import "@preview/bookly:4.0.1": *
+#import "@preview/bookly:4.1.0": *
 
 #let my-theme(colors: default-colors, it) = {
 	// Update the theme state
@@ -772,11 +838,7 @@ To implement a custom theme, you have to define a function that includes the `sh
 
 	it
 }
-```
-]
 
-#codesnippet[
-```typ
 // Custom part function
 #let my-part(title) = {...}
 
@@ -835,9 +897,7 @@ Then, you can initialize the template with your custom theme as follows:
 
 - `states.localization` -- #dtype(dictionary): Dictionary of terms used in the document (e.g., "chapter", etc.) in the selected language.
 
-#info-alert[If you need to use a language that is not supported by default, you can modify the `states.localization` dictionary when initializing the template.
-
-For example, to add support for Dutch, you can do the following `#states.localization.update(json("path_to_file/dutch.json"))`. The JSON file should contain the translations of the terms used in the document. For the english version, the JSON  file is as follows:
+#info-alert[To use a language that is not supported by default, you can modify the `states.localization` dictionary when initializing the template. For instance, to add support for Dutch, you can do the following `#states.localization.update(json("path_to_file/dutch.json"))`. For the english version, the JSON  file is as follows:
 ```json
 {
     "and": " and ",
@@ -853,6 +913,7 @@ For example, to add support for Dutch, you can do the following `#states.localiz
     "habilitation": "French Habilitation to supervise research",
     "lof": "List of figures",
     "lot": "List of tables",
+    "minitoc": "Content",
     "note": "Note",
     "part": "Part",
     "phd": "Doctoral thesis",
@@ -864,7 +925,7 @@ For example, to add support for Dutch, you can do the following `#states.localiz
     "supervisors": "Supervisors:",
     "tip": "Tip",
     "toc": "Table of contents",
-    "version-usage": "This version of  can be viewed and downloaded free of charge for personal use only. It must not be redistributed, sold, or used in derivative works.",
+    "version-usage": "This version can be viewed and downloaded free of charge for personal use only. It must not be redistributed, sold, or used in derivative works.",
     "warning": "Warning"
 }
 ```
@@ -884,6 +945,10 @@ For example, to add support for Dutch, you can do the following `#states.localiz
 
 - `states.page-numbering` -- #dtype(str): Numbering pattern for pages.
 
+- `states.paper-size` -- #dtype(str): Size of the paper.
+
+- `states.par-indent` -- #dtype(bool): Indentation of paragraphs.
+
 - `states.part-numbering` -- #dtype(str): Numbering pattern for parts.
 
 - `states.sidenotecounter` -- #dtype(int): Counter for sidenotes.
@@ -894,18 +959,13 @@ For example, to add support for Dutch, you can do the following `#states.localiz
 
 - `states.tufte` -- #dtype(bool): Indicates whether the current layout is Tufte style.
 
-#info-alert[
-	`bookly` also comes with a function #cmd("reset-counters") to reset the counters for equations, figures, tables, sidenotes, and footnotes.
-]
-
 = Dependencies
 
 The `bookly` template relies on several #Typst packages to provide additional functionalities:
 #v(0.5em)
 - `marginalia:0.3.1`: for tufte layout.
-- `hydra:0.6.2` : for bibliography management.
+- `hydra:0.6.3` : for bibliography management.
 - `equate:0.3.3` : for advanced equation numbering.
-- `itemize:0.2.0"`: for lists and enumerations customization.
 - `showybox:2.0.4` : for custom boxes.
 - `suboutline:0.3.0` : for mini tables of contents in chapters.
 - `subpar:0.2.2` : for subfigures.
