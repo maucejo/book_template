@@ -494,6 +494,7 @@ The template provides two functions to create title pages: one for a book and on
   cover: none,
   logo: none,
 	version-usage: none,
+	show-cover-author: true,
 	[body]
 )
 )[
@@ -523,6 +524,10 @@ The template provides two functions to create title pages: one for a book and on
 	]]
 
 	#argument("version-usage", default: none, types: ("string", content))[Description of the version usage of the book. It can include the version number, the date or any licensing information. It is displayed in the footer of the title page.
+	]
+
+	#argument("show-cover-author", default: true, types: "bool")[
+		If `true`, the author name is displayed on the cover page.
 	]
 ]
 
