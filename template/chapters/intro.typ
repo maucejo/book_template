@@ -1,11 +1,4 @@
-// #import "@preview/bookly:4.1.0": *
-#import "../../src/bookly.typ": *
-
-// #show: chapter.with(
-//   title: "Introduction",
-//   abstract: [#lorem(50)],
-//   numbered: false
-// )
+#import "@preview/bookly:4.1.1": *
 
 #show: chapter-nonum
 = Introduction
