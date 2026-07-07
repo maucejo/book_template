@@ -19,7 +19,7 @@
   // theme: modern,
   // theme: obook,
   // theme: orly,
-  theme: pretty,
+//   theme: pretty,
   // tufte: true,
   lang: "en",
   // colors: config-colors,
@@ -35,7 +35,7 @@
     open-right: true,
     par-indent: false,
     // show-cover-author: true,
-    // paper-size: "a5",
+//     paper-size: "a5",
     // alt-margins: true,
     // part-numbering: none
   )
