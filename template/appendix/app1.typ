@@ -1,4 +1,4 @@
-#import "@preview/bookly:4.1.1": *
+#import "@preview/bookly:4.1.2": *
 
 = Algorithms
 

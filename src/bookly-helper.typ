@@ -57,7 +57,7 @@
 }
 
 // Equations
-#let _boxeq(stroke: none, fill: none, radius: 0pt, inset: 0.6em, baseline: 30%, body) = context {
+#let _boxeq(stroke: none, fill: none, radius: 0pt, inset: 0.6em, baseline: 5%, body) = context {
   set align(center)
   box(
     stroke: stroke,
@@ -365,6 +365,8 @@
 // Back cover
 #let back-cover(abstracts: (), logo: none) = context{
   set page(margin: auto, header: none, footer: none)
+
+  counter(page).update(n => n - 1) // Remove the last page number
 
   if states.open-right.get() {
     pagebreak(to: "even", weak: true)
