@@ -78,6 +78,19 @@
   // References
   show ref: set text(fill: colors.primary)
 
+  // Links
+  show link: it => if type(it.dest) == str {
+    if it.dest.starts-with("https://") or it.dest.starts-with("http://") {
+      text(fill: colors.primary, it)
+    } else if it.dest.starts-with("mailto:") {
+      text(fill: colors.primary, it.dest.slice(7))
+    } else {
+      it
+    }
+  } else {
+    it
+  }
+
   // Tables
   show table.cell.where(y: 0): set text(weight: "bold")
   set table(
@@ -294,19 +307,6 @@ let page-header = context {
 }
 
 #let custom-box-obook(title: none, icon: "info", color: rgb(29, 144, 208), body) = context {
-  // let box-tcontent = box(fill: color.lighten(85%), inset: 0.5em, radius: (top: 0.5em), stroke: (bottom: none, rest: 1pt + color))[
-  //    #box-title(color-svg("resources/images/icons/" + icon + ".svg", color, width: 1em), text(fill: color)[*#title*])]
-
-  // let box-tw = measure(box-tcontent).width
-
-  // let box-title = align(right)[
-  //   #stack(
-  //     dir: ttb,
-  //      box-tcontent,
-  //      move(dx: -0.5pt, line(length: box-tw - 1pt, stroke: 2pt + color.lighten(85%)))
-  //   )
-  // ]
-  
   let box-title = move(dy: -0.5em)[#box-title(color-svg("resources/images/icons/" + icon + ".svg", color, width: 1em), text(fill: color)[*#title*])]
 
   let box-content = block(breakable: true, box(fill: color.lighten(85%), stroke: 1pt + color, width: 100%, inset: (top: 1em, bottom: 1em, rest: 0.5em), radius: 0.5em)[#body])

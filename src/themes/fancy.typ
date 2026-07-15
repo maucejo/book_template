@@ -76,6 +76,19 @@
   // References
   show ref: set text(fill: colors.primary)
 
+  // Links
+  show link: it => if type(it.dest) == str {
+    if it.dest.starts-with("https://") or it.dest.starts-with("http://") {
+      text(fill: colors.primary, it)
+    } else if it.dest.starts-with("mailto:") {
+      text(fill: colors.primary, it.dest.slice(7))
+    } else {
+      it
+    }
+  } else {
+    it
+  }
+
   // Tables
   show table.cell.where(y: 0): set text(weight: "bold", fill: white)
     set table(
@@ -177,7 +190,8 @@
     body-color: color.lighten(90%),
     thickness: 1pt
   ),
-  align: center
+  align: center,
+  breakable: true
 )[
   #body
   #v(0.5em)

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+<style>
+.title{font: 96px Georgia, 'Times New Roman', serif; fill:#163a6b}
+.tag{font: 24px Arial, sans-serif; letter-spacing:4px; fill:#5a6b7a}
+.stroke{fill:none;stroke:#163a6b;stroke-width:10;stroke-linejoin:round}
+</style>
+<path class="stroke" d="M250 180 L250 430 Q325 395 400 430 Q475 395 550 430 L550 180 Q475 145 400 180 Q325 145 250 180Z"/>
+<path class="stroke" d="M400 180 L400 430"/>
+<path d="M385 220 h30 v140 h-30zM345 220 h110 v20 h-110z" fill="#163a6b"/>
+<path d="M490 180 h35 v70 l-17-12 -18 12z" fill="#6f8fdc"/>
+<text x="400" y="610" text-anchor="middle" class="title">bookly</text>
+<text x="400" y="660" text-anchor="middle" class="tag">A TYPST BOOK TEMPLATE</text>
+</svg>

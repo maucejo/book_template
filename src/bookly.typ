@@ -139,8 +139,7 @@
       let eq-parbreaks = query(selector(<eq-parbreak>).after(eq-end.location()).before(here()))
       if eq-parbreaks.len() > 0 { return it }
 
-      // Paragraph start aligns with end of last equation, so recreate
-      // the paragraph, but without indent.
+      // Paragraph start aligns with end of last equation, so recreate the paragraph, but without indent.
       let fields = it.fields()
       let body = fields.remove("body")
       return par(

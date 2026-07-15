@@ -111,6 +111,19 @@
   // References
   show ref: set text(fill: colors.primary)
 
+  // Links
+  show link: it => if type(it.dest) == str {
+    if it.dest.starts-with("https://") or it.dest.starts-with("http://") {
+      text(fill: colors.primary, it)
+    } else if it.dest.starts-with("mailto:") {
+      text(fill: colors.primary, it.dest.slice(7))
+    } else {
+      it
+    }
+  } else {
+    it
+  }
+
   // Outline
   set outline.entry(fill: box(width: 1fr, repeat(gap: 0.25em)[.]))
   show outline.entry: it => {

@@ -19,10 +19,6 @@
       it
     })
 
-    // Ugly hack
-    // let dy = if states.tufte.get() {-75%} else {-6%}
-    // place(top, dy: dy, rect(stroke: none, fill: white, width: 116%))
-
     let text-size = 1.6em
     set align(left)
     let type-chapter = if states.isappendix.get() {states.localization.get().appendix} else {states.localization.get().chapter}
@@ -129,6 +125,19 @@
 
   // References
   show ref: set text(fill: colors.primary)
+
+  // Links
+  show link: it => if type(it.dest) == str {
+    if it.dest.starts-with("https://") or it.dest.starts-with("http://") {
+      text(fill: colors.primary, it)
+    } else if it.dest.starts-with("mailto:") {
+      text(fill: colors.primary, it.dest.slice(7))
+    } else {
+      it
+    }
+  } else {
+    it
+  }
 
   // Tables
   show table.cell.where(y: 0): set text(weight: "bold", fill: white)
