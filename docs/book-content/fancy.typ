@@ -20,6 +20,10 @@ $
 integral_0^1 f(x) dif x = F(1) - F(0) "et voilà"
 $ <eq:2-fancy>
 
+$
+  #boxeq($bold(y)_(k + 1) = bold(C) space.thin bold(x)_(k + 1)$)
+$
+
 #lorem(20)
 
 == Code

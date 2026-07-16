@@ -1,6 +1,6 @@
 #import "../../src/bookly.typ": *
 
-= Sample chapter -- Classic theme
+= Sample chapter -- Orly theme
 
 #lorem(100)
 
@@ -9,16 +9,17 @@
 #pagebreak()
 
 == Goals
+
 #lorem(100)
 
-Equations @eq:1-classic and @eq:2-classic are very important.
+Equations @eq:1-orly and @eq:2-orly are very important.
 $
 integral_0^1 f(x) dif x = F(1) - F(0) "et voilà"
-$ <eq:1-classic>
+$ <eq:1-orly>
 
 $
 integral_0^1 f(x) dif x = F(1) - F(0) "et voilà"
-$ <eq:2-classic>
+$ <eq:2-orly>
 
 $
   #boxeq($bold(y)_(k + 1) = bold(C) space.thin bold(x)_(k + 1)$)
@@ -28,21 +29,21 @@ $
 
 == Code
 
-Figure @fig:1-classic is a beautiful typst logo.
+Figure @fig:1-orly is a beautiful typst logo.
 
 #figure(
 image("../manual-images/typst-logo.svg", width: 75%),
 caption: lorem(10),
-) <fig:1-classic>
+) <fig:1-orly>
 
-Figure @fig:subfig-classic the Typst logo. Figure @b-classic is a Typst logo.
+Figure @fig:subfig-orly the Typst logo. Figure @b-orly is a Typst logo.
 
 #subfigure(
 figure(image("../manual-images/typst-logo.svg"), caption: []),
-figure(image("../manual-images/typst-logo.svg"), caption: []), <b-classic>,
+figure(image("../manual-images/typst-logo.svg"), caption: []), <b-orly>,
 columns: (1fr, 1fr),
 caption: [(a) Left image and (b) Right image],
-label: <fig:subfig-classic>,
+label: <fig:subfig-orly>,
 )
 
 #figure(

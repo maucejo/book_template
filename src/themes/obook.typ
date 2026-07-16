@@ -71,6 +71,9 @@
     ]
   }
 
+  // Footnotes
+  set footnote.entry(separator: line(length: 30% + 0pt, stroke: 0.05em))
+
   // Lists
   set list(marker: [#text(fill:colors.primary, size: 1.1em)[#sym.bullet]])
   set enum(numbering: n => text(fill:colors.primary)[#n.])

@@ -40,6 +40,9 @@
     v(5em)
   }
 
+  // Footnotes
+  set footnote.entry(separator: line(length: 30% + 0pt, stroke: 0.05em))
+
   // Tables
   show table.cell.where(y: 0): set text(weight: "bold", fill: white)
   set table(
