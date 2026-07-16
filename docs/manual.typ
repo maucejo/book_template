@@ -42,32 +42,34 @@
 #include "book-content/theming.typ"
 
 #show: appendix
-#part[Tufte & Themes in action!]
+#part[Themes in action!]
 
-#context[
-#states.tufte.update(true)
-#set figure.caption(position: top) if states.tufte.get()
-#show: show-if(states.tufte.get(), it => {
-  show figure.caption.where(position: top): note.with(
-    alignment: "top",
-    counter: none,
-    shift: "avoid",
-    keep-order: true,
-  )
-  it
-})
+// #[
+// #context[
+// #states.tufte.update(true)
+// #set figure.caption(position: top) if states.tufte.get()
+// #show: show-if(states.tufte.get(), it => {
+//   show figure.caption.where(position: top): note.with(
+//     alignment: "top",
+//     counter: none,
+//     shift: "avoid",
+//     keep-order: true,
+//   )
+//   it
+// })
 
-#let m-config = (
-  inner: (far: 1.25cm, width: 0cm, sep: 0cm),
-  outer: (far: 1.25cm, width: 5cm, sep: 0.5cm),
-  book: false
-  )
+// #let m-config = (
+//   inner: (far: 1.25cm, width: 0cm, sep: 0cm),
+//   outer: (far: 1.25cm, width: 5cm, sep: 0.5cm),
+//   book: false
+//   )
 
-#show: marginalia.setup.with(..m-config)
-#include "book-content/tufte.typ"
-#set page(margin: auto)
-#states.tufte.update(false)
-]
+// #show: marginalia.setup.with(..m-config)
+// #include "book-content/tufte.typ"
+// #set page(margin: auto)
+// #states.tufte.update(false)
+// ]
+// ]
 
 #include "book-content/fancy.typ"
 
