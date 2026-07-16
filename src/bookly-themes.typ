@@ -1,10 +1,10 @@
 #import "bookly-defaults.typ": *
-#import "themes/classic.typ": classic
-#import "themes/fancy.typ": fancy
-#import "themes/modern.typ": modern
-#import "themes/obook.typ": obook
-#import "themes/orly.typ": orly
-#import "themes/pretty.typ": pretty
+#import "themes/classic.typ": *
+#import "themes/fancy.typ": *
+#import "themes/modern.typ": *
+#import "themes/obook.typ": *
+#import "themes/orly.typ": *
+#import "themes/pretty.typ": *
 
 // Part
 #let part(title) = context (states.theme.get().part)(title)

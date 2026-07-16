@@ -218,7 +218,7 @@ let page-header = context {
 }
 
 // Part
-#let part-obook(title) = context {
+#let obook-part(title) = context {
   states.counter-part.update(i => i + 1)
   set page(
     header: none,
@@ -283,7 +283,7 @@ let page-header = context {
 }
 
 // Minitoc
-#let minitoc-obook = context {
+#let obook-minitoc = context {
   set par(first-line-indent: 0em) if states.par-indent.get()
   let toc-header = states.localization.get().minitoc
 
@@ -309,7 +309,7 @@ let page-header = context {
   )
 }
 
-#let custom-box-obook(title: none, icon: "info", color: rgb(29, 144, 208), body) = context {
+#let obook-custom-box(title: none, icon: "info", color: rgb(29, 144, 208), body) = context {
   let box-title = move(dy: -0.5em)[#box-title(color-svg("resources/images/icons/" + icon + ".svg", color, width: 1em), text(fill: color)[*#title*])]
 
   let box-content = block(breakable: true, box(fill: color.lighten(85%), stroke: 1pt + color, width: 100%, inset: (top: 1em, bottom: 1em, rest: 0.5em), radius: 0.5em)[#body])
@@ -321,6 +321,6 @@ let page-header = context {
   )
 }
 
-#let boxeq-obook(body) = context _boxeq(stroke: 1pt + states.colors.get().primary, fill: states.colors.get().boxeq.lighten(30%), radius: 5pt, body)
+#let obook-boxeq(body) = context _boxeq(stroke: 1pt + states.colors.get().primary, fill: states.colors.get().boxeq.lighten(30%), radius: 5pt, body)
 
-#let obook = (theme: obook-theme, part: part-obook, minitoc: minitoc-obook, box: custom-box-obook, boxeq: boxeq-obook)
+#let obook = (theme: obook-theme, part: obook-part, minitoc: obook-minitoc, box: obook-custom-box, boxeq: obook-boxeq)

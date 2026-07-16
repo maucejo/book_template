@@ -171,7 +171,7 @@
 }
 
 // Boxes - Definitions
-#let custom-box-fancy(title: none, icon: "info", color: rgb(29, 144, 208), body) = showybox(
+#let fancy-custom-box(title: none, icon: "info", color: rgb(29, 144, 208), body) = showybox(
   title: grid(
     columns: 2,
     align: (left + horizon, right + horizon),
@@ -198,7 +198,7 @@
 ]
 
 // Part
-#let part-fancy(title) = context {
+#let fancy-part(title) = context {
   states.counter-part.update(i => i + 1)
   set page(
     header: none,
@@ -247,7 +247,7 @@
 }
 
 // Minitoc
-#let minitoc-fancy = context {
+#let fancy-minitoc = context {
   set par(first-line-indent: 0em) if states.par-indent.get()
   let toc-header = states.localization.get().minitoc
   block(above: 3.5em)[
@@ -263,6 +263,6 @@
   miniline
 }
 
-#let boxeq-fancy(body) = context _boxeq(stroke: 1pt + states.colors.get().boxeq.darken(35%), fill: states.colors.get().boxeq, radius: 5pt, body)
+#let fancy-boxeq(body) = context _boxeq(stroke: 1pt + states.colors.get().boxeq.darken(35%), fill: states.colors.get().boxeq, radius: 5pt, body)
 
-#let fancy = (theme: fancy-theme, part: part-fancy, minitoc: minitoc-fancy, box: custom-box-fancy, boxeq: boxeq-fancy)
+#let fancy = (theme: fancy-theme, part: fancy-part, minitoc: fancy-minitoc, box: fancy-custom-box, boxeq: fancy-boxeq)

@@ -71,14 +71,13 @@ Then, you can initialize the template with your custom theme as follows:
 	```
 ]
 
-#info-box[If you use a multiple files structure with a #sym.ast\.typ file for each chapter, you can type at the top of each file the following code to access the functions like #cmd("part") or #cmd("minitoc") defined in the theme file.
+If you want to reuse and combine elements of the existing themes, you can simply use it in the definition of your custom theme #mtype("dictionary").
 
-	#code-box[
-		```typ
-		#import "path_to_file/my-theme.typ": *
-		```
-	]
-]
+#code-box[```typ
+#let custom = (theme: pretty-theme, part: obook-part, minitoc: modern-minitoc, box: orly-custom-box, boxeq: pretty-boxeq)
+```]
+
+#info-box[The naming convention for the theming elements is as follows: `theme-name-part`, `theme-name-minitoc`, `theme-name-box`, `theme-name-boxeq`. For example, the part function of the `obook` theme is called `obook-part`.]
 
 == Template states
 

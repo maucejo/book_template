@@ -254,7 +254,7 @@
 }
 
 // Boxes - Definitions
-#let custom-box-modern(title: none, icon: "info", color: rgb(29, 144, 208), body) = {
+#let modern-custom-box(title: none, icon: "info", color: rgb(29, 144, 208), body) = {
   grid(
     columns: (auto, 1fr),
     column-gutter: 0.75em,
@@ -275,7 +275,7 @@
 }
 
 // Part
-#let part-modern(title) = context {
+#let modern-part(title) = context {
   states.counter-part.update(i => i + 1)
   set page(
     header: none,
@@ -324,7 +324,7 @@
   }
 }
 
-#let minitoc-modern = context {
+#let modern-minitoc = context {
   set par(first-line-indent: 0em) if states.par-indent.get()
   let toc-header = states.localization.get().minitoc
   block(above: 3.5em)[
@@ -340,7 +340,7 @@
   miniline
 }
 
-#let boxeq-modern(body) = context _boxeq(stroke: 1pt + states.colors.get().primary, fill: states.colors.get().primary.lighten(90%), radius: 5pt, body)
+#let modern-boxeq(body) = context _boxeq(stroke: 1pt + states.colors.get().primary, fill: states.colors.get().primary.lighten(90%), radius: 5pt, body)
 
-#let modern = (theme: modern-theme, part: part-modern, minitoc: minitoc-modern, box: custom-box-modern, boxeq: boxeq-modern)
+#let modern = (theme: modern-theme, part: modern-part, minitoc: modern-minitoc, box: modern-custom-box, boxeq: modern-boxeq)
 

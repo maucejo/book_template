@@ -118,7 +118,7 @@
 }
 
 // Boxes - Definitions
-#let custom-box-orly(title: none, icon: "info", color: rgb(29, 144, 208), body) = {
+#let orly-custom-box(title: none, icon: "info", color: rgb(29, 144, 208), body) = {
   showybox(
     title: box-title(color-svg("resources/images/icons/" + icon + ".svg", color, width: 1em), [*#title*]),
     title-style: (
@@ -137,7 +137,7 @@
 }
 
 // Part
-#let part-orly(title) = context {
+#let orly-part(title) = context {
   states.counter-part.update(i => i + 1)
   set page(
     header: none,
@@ -186,7 +186,7 @@
   }
 }
 
-#let minitoc-orly = context {
+#let orly-minitoc = context {
   set par(first-line-indent: 0em) if states.par-indent.get()
   let miniline = line(stroke: 0.5pt, length: 100%)
   let toc-header = states.localization.get().minitoc
@@ -205,6 +205,6 @@
   miniline
 }
 
-#let boxeq-orly(body) = context _boxeq(stroke: 1pt, radius: 5pt, body)
+#let orly-boxeq(body) = context _boxeq(stroke: 1pt, radius: 5pt, body)
 
-#let orly = (theme: orly-theme, part: part-orly, minitoc: minitoc-orly, box: custom-box-orly, boxeq: boxeq-orly)
+#let orly = (theme: orly-theme, part: orly-part, minitoc: orly-minitoc, box: orly-custom-box, boxeq: orly-boxeq)

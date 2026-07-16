@@ -149,7 +149,7 @@
 }
 
 // Boxes - Definitions
-#let custom-box-classic(title: none, icon: "info", color: rgb(29, 144, 208), body) = {
+#let classic-custom-box(title: none, icon: "info", color: rgb(29, 144, 208), body) = {
   showybox(
     title: box-title(color-svg("resources/images/icons/" + icon + ".svg", white, width: 1em), [*#title*]),
     title-style: (
@@ -172,7 +172,7 @@
 }
 
 // Part
-#let part-classic(title) = context {
+#let classic-part(title) = context {
   states.counter-part.update(i => i + 1)
   set page(
     header: none,
@@ -210,7 +210,7 @@
   }
 }
 
-#let minitoc-classic = context {
+#let classic-minitoc = context {
   set par(first-line-indent: 0em) if states.par-indent.get()
   let toc-header = states.localization.get().minitoc
   block(above: 3.5em)[
@@ -226,7 +226,6 @@
   miniline
 }
 
-#let boxeq-classic(body) = context _boxeq(stroke: 0.75pt, body)
+#let classic-boxeq(body) = context _boxeq(stroke: 0.75pt, body)
 
-#let classic = (theme: classic-theme, part: part-classic, minitoc: minitoc-classic, box: custom-box-classic, boxeq: boxeq-classic)
-
+#let classic = (theme: classic-theme, part: classic-part, minitoc: classic-minitoc, box: classic-custom-box, boxeq: classic-boxeq)

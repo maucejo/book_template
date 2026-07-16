@@ -256,7 +256,7 @@
 }
 
 // Boxes - Definitions
-#let custom-box-pretty(title: none, icon: "info", color: rgb(29, 144, 208), body) = {
+#let pretty-custom-box(title: none, icon: "info", color: rgb(29, 144, 208), body) = {
   showybox(
     title: box-title(color-svg("resources/images/icons/" + icon + ".svg", color, width: 1em), [*#title*]),
     title-style: (
@@ -275,7 +275,7 @@
 }
 
 // Part
-#let part-pretty(title) = context {
+#let pretty-part(title) = context {
   states.counter-part.update(i => i + 1)
   set page(
     header: none,
@@ -331,7 +331,7 @@
 }
 
 // Minitoc
-#let minitoc-pretty = context {
+#let pretty-minitoc = context {
   set par(first-line-indent: 0em) if states.par-indent.get()
   let toc-header = states.localization.get().minitoc
 
@@ -357,6 +357,6 @@
   )
 }
 
-#let boxeq-pretty(body) = context _boxeq(stroke: 1pt + states.colors.get().primary, fill: states.colors.get().boxeq.lighten(35%), radius: (top-left: 2em, bottom-right: 2em, rest: 0em), body)
+#let pretty-boxeq(body) = context _boxeq(stroke: 1pt + states.colors.get().primary, fill: states.colors.get().boxeq.lighten(35%), radius: (top-left: 2em, bottom-right: 2em, rest: 0em), body)
 
-#let pretty = (theme: pretty-theme, part: part-pretty, minitoc: minitoc-pretty, box: custom-box-pretty, boxeq: boxeq-pretty)
+#let pretty = (theme: pretty-theme, part: pretty-part, minitoc: pretty-minitoc, box: pretty-custom-box, boxeq: pretty-boxeq)
