@@ -81,17 +81,13 @@ $
 To create an equation without numbering,`bookly` also provides the #mtype("label") `<nonum-eq>` to create unnumbered equations. To use it, simply add the label `<nonum-eq>` after the equation.
 
 #v(1.5em)
-#example-box(vspace: -0.5em)[
+#example(vspace: -0.5em,
 ```typ
 $
 integral_0^1 f(x) dif x = F(1) - F(0)
 $ <nonum-eq>
 ```
-][
-$
-  integral_0^1 f(x) dif x = F(1) - F(0)
-$ <nonum-eq>
-]
+)
 
 == Callout boxes
 

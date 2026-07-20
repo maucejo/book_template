@@ -66,10 +66,11 @@
 
 #let cmd-(body) = [#text(size: 0.9em, fill: function-name-color)[\#*#body*]]
 
-#let example-box(left, right, lang: true, numbering: true, lang-color: teal, vspace: 0em) = grid(
-  columns: (1fr, 1fr),
+#let example-box(left, right, ncol: 2, lang: true, numbering: true, lang-color: teal, vspace: 0em, ..args) = grid(
+  columns: (1fr,)*ncol,
   column-gutter: 1em,
   align: horizon,
+  ..args,
   [#zebraw(
     lang: lang,
     lang-color: lang-color,
@@ -77,6 +78,24 @@
 
   ],
   [#v(vspace) #render-box[#right]],
+)
+
+#let example(code, ncol: 2, lang: true, numbering: true, lang-color: teal, vspace: 0em, ..args) = grid(
+  columns: (1fr,)*ncol,
+  column-gutter: 1em,
+  align: horizon,
+  ..args,
+  [#zebraw(
+    lang: lang,
+    lang-color: lang-color,
+    numbering: numbering, code)
+
+  ],
+  [
+    #set par(first-line-indent: 0pt)
+    #v(vspace)
+    #render-box[#eval(code.text, mode: "markup")]
+  ],
 )
 
 #let argument(name, default: none, type: none, body) = context {
