@@ -13,7 +13,7 @@ This chapter provides an overview of the general usage of the Bookly template. I
 
 To use the `bookly` template, you need to include the following line at the beginning of your `typ` file:
 #code-box[```typ
-#import "@preview/bookly:4.1.3": *
+#import "@preview/bookly:4.1.4": *
 ```
 ]
 

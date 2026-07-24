@@ -22,7 +22,7 @@
   body
 ) = context {
   // Document's properties
-  set document(author: author, title: title)
+  set document(author: to-string(author), title: title)
   states.author.update(author)
   states.title.update(title)
   states.tufte.update(tufte)

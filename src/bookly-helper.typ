@@ -427,3 +427,21 @@
   let data = colorize(read(path), color)
   return image(bytes(data), ..args)
 }
+
+#let to-string(content) = {
+  if type(content) == str {
+    content
+  } else if content.has("text") {
+    if type(content.text) == str {
+      content.text
+    } else {
+      to-string(content.text)
+    }
+  } else if content.has("children") {
+    content.children.map(to-string).join("")
+  } else if content.has("body") {
+    to-string(content.body)
+  } else if content == [ ] {
+    " "
+  }
+}
