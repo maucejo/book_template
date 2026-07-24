@@ -330,11 +330,11 @@ The template provides two functions to create title pages: one for a book and on
     )
 
     #show: book.with(
-    title-page: thesis-title-page(
-      supervisor: ("Supervisor A", "Supervisor B"),
-      cosupervisor: ("Co-supervisor A", "Co-supervisor B"),
-      committee: committee
-    )
+      title-page: thesis-title-page(
+        supervisor: ("Supervisor A", "Supervisor B"),
+        cosupervisor: ("Co-supervisor A", "Co-supervisor B"),
+        committee: committee
+      )
     )
     ```
   )
