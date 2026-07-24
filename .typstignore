@@ -14,3 +14,4 @@ justfile
 docs
 template_tufte
 template_dev
+.edist

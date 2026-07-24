@@ -110,7 +110,7 @@ Supported languages:
     #info-box[If `part-numbering` is set to #mtype("none"), the parts are not numbered. If it is set to `"1"`, the parts are numbered with Arabic numerals. If it is set to `"I"`, the parts are numbered with Roman numerals. Other numbering patterns are possible.]
 ]
 
-=== Initialization example
+*Initialization example*
 #code-box[
 ```typ
 #show: bookly.with(

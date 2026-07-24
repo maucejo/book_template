@@ -1,5 +1,6 @@
 #import "@preview/showybox:2.0.4": *
 #import "@preview/zebraw:0.6.3": *
+#import "@preview/codly-languages:0.1.10": *
 
 #let default-type-color = rgb("#eff0f3")
 #let function-name-color = rgb("#4b69c6")
@@ -46,15 +47,19 @@
 
 #let mtype(type) = box(fill: colors.at(type), radius: 0.25em, inset: 0.25em, text(size: 0.8em, type))
 
+#let typst-color = rgb(35, 157, 173)
+
+#let lang-title = box(height: 0.7em, codly-languages.typ.icon + h(0.5em) + text(fill: white, codly-languages.typ.name))
+
 #let render-box = showybox.with(
   title: align(center)[#text(fill: black)[*Rendering*]],
   title-style:(
     sep-thickness: 0pt,
   ),
   frame: (
-    title-color: teal.lighten(75%),
-    border-color: teal,
-    body-color: teal.lighten(95%),
+    title-color: typst-color.lighten(75%),
+    border-color: typst-color,
+    body-color: typst-color.lighten(95%),
     thickness: (left: 2pt, rest: 0.5pt),
     radius: 2.55pt
   ),
@@ -66,30 +71,36 @@
 
 #let cmd-(body) = [#text(size: 0.9em, fill: function-name-color)[\#*#body*]]
 
-#let example-box(left, right, ncol: 2, lang: true, numbering: true, lang-color: teal, vspace: 0em, ..args) = grid(
+#let example-box(left, right, ncol: 2, lang: true, numbering: false, lang-color: teal, vspace: 0em, ..args) = grid(
   columns: (1fr,)*ncol,
   column-gutter: 1em,
   align: horizon,
   ..args,
-  [#zebraw(
-    lang: lang,
-    lang-color: lang-color,
+  [
+    #zebraw(
+    lang: lang-title,
+    lang-color: codly-languages.typ.color.lighten(20%),
     numbering: numbering, left)
-
   ],
   [#v(vspace) #render-box[#right]],
 )
 
-#let example(code, ncol: 2, lang: true, numbering: true, lang-color: teal, vspace: 0em, ..args) = grid(
+#let example(code, ncol: 2, lang: true, numbering: false, lang-color: teal, vspace: 0em, ..args) = grid(
   columns: (1fr,)*ncol,
   column-gutter: 1em,
   align: horizon,
   ..args,
-  [#zebraw(
-    lang: lang,
-    lang-color: lang-color,
+  [
+    #let code-lang = code.at("lang", default: "text")
+    #let lang-meta = codly-languages.at(
+      code-lang,
+      default: (icon: [], name: code-lang, color: teal),
+    )
+    #let lang-title = box(height: 0.7em, lang-meta.icon + h(0.5em) + text(fill: white, lang-meta.name))
+    #zebraw(
+    lang: lang-title,
+    lang-color: codly-languages.at(code-lang).color.lighten(20%),
     numbering: numbering, code)
-
   ],
   [
     #set par(first-line-indent: 0pt)

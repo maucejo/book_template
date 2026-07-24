@@ -66,6 +66,7 @@ Figure @fig:subfig shows an example of subfigures. Figure @b shows the second su
 
 To highlight an important equation, use the #cmd("boxeq") function.
 
+#v(0.5em)
 #example-box[
 ```typ
 $
