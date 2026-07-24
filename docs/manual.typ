@@ -1,10 +1,5 @@
 #import "../src/bookly.typ": *
 #import "reset-theme.typ": *
-#import "@preview/codly:1.3.0": *
-#import "@preview/codly-languages:0.1.10": *
-
-#show: codly-init
-#codly(zebra-fill: none, number-format: none, languages: codly-languages, fill: luma(250), stroke: 0.5pt+  rgb(35, 157, 173))
 
 #show: bookly.with(
   author: "Mathieu AUCEJO",
