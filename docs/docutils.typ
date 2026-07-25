@@ -1,5 +1,5 @@
 #import "@preview/showybox:2.0.4": *
-#import "@preview/zebraw:0.6.3": *
+#import "@preview/zebraw:0.7.0": *
 #import "@preview/codly-languages:0.1.10": *
 
 #let default-type-color = rgb("#eff0f3")
@@ -49,8 +49,6 @@
 
 #let typst-color = rgb(35, 157, 173)
 
-#let lang-title = box(height: 0.7em, codly-languages.typ.icon + h(0.5em) + text(fill: white, codly-languages.typ.name))
-
 #let render-box = showybox.with(
   title: align(center)[#text(fill: black)[*Rendering*]],
   title-style:(
@@ -77,10 +75,7 @@
   align: horizon,
   ..args,
   [
-    #zebraw(
-    lang: lang-title,
-    lang-color: codly-languages.typ.color.lighten(20%),
-    numbering: numbering, left)
+    #zebraw(numbering: numbering, left)
   ],
   [#v(vspace) #render-box[#right]],
 )
@@ -91,16 +86,7 @@
   align: horizon,
   ..args,
   [
-    #let code-lang = code.at("lang", default: "text")
-    #let lang-meta = codly-languages.at(
-      code-lang,
-      default: (icon: [], name: code-lang, color: teal),
-    )
-    #let lang-title = box(height: 0.7em, lang-meta.icon + h(0.5em) + text(fill: white, lang-meta.name))
-    #zebraw(
-    lang: lang-title,
-    lang-color: codly-languages.at(code-lang).color.lighten(20%),
-    numbering: numbering, code)
+    #zebraw(numbering: numbering, code)
   ],
   [
     #set par(first-line-indent: 0pt)
