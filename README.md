@@ -111,7 +111,7 @@ After importing `bookly`, you have to initialize the template by a show rule wit
 
 * `hydra:0.6.3` : for bibliography management.
 
-* `equate:0.3.2` : for advanced equation numbering.
+* `equate:0.3.3` : for advanced equation numbering.
 
 * `showybox:2.0.4` : for custom boxes.
 
