@@ -77,8 +77,8 @@
   show-sub: it => {set figure.caption(position: bottom); it}
 )
 
-// Long and short captions for figures or tables
-#let ls-caption(long, short) = context if states.in-outline.get() { short } else { long }
+// Short or long title or caption for figures or tables
+#let short-or-long(short, long) = context if states.in-outline.get() { short } else { long }
 
 // Partial outline
 #let partial-outline = context {
