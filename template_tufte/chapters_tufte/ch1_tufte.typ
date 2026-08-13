@@ -1,6 +1,5 @@
-// #import "@preview/bookly:3.2.0": *
-#import "../../src/bookly.typ": *
-// #show: chapter.with(title: "First chapter")
+#import "@preview/bookly:4.1.4": *
+// #import "../../src/bookly.typ": *
 
 = First chapter
 #lorem(100)
@@ -32,7 +31,7 @@ $ <eq:2>
 
   #notefigure(
     image("../images/typst-logo.svg"),
-    caption: [#ls-caption([#lorem(10)], [#lorem(2)])],
+    caption: [#short-or-long([#lorem(10)], [#lorem(2)])],
     alignment: "baseline"
   )<fig:1>
 ]

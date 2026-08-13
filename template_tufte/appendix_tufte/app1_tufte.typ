@@ -1,5 +1,5 @@
-// #import "@preview/bookly:4.0.0" /* From 4.0.1 */: *
-#import "../../src/bookly.typ": *
+#import "@preview/bookly:4.1.4" /* From 4.0.1 */: *
+// #import "../../src/bookly.typ": *
 
 // #show: chapter.with(
 //   title: "Algorithms",

@@ -78,15 +78,17 @@
 )
 
 // Short or long title or caption for figures or tables
-#let short-or-long(short, long) = context if states.in-outline.get() { short } else { long }
+// #let short-or-long(short, long) = context if states.is-short.get() { short } else { long }
+// Short or long title
+#let short-or-long(short, long) = [#metadata((short: short, long: long)) <bookly-title>]
 
 // Partial outline
 #let partial-outline = context {
   let cur-loc = here()
 
-  // Find the next part phantom heading (level 1 with in-outline == true)
+  // Find the next part phantom heading (level 1 with is-short == true)
   let future-h1 = query(selector(heading.where(level: 1)).after(cur-loc, inclusive: false))
-  let next-parts = future-h1.filter(h => states.in-outline.at(h.location()))
+  let next-parts = future-h1.filter(h => states.is-short.at(h.location()))
 
   // Build target: all outlined headings in this part, depth 2 max
   let target = if next-parts.len() > 0 {

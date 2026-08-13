@@ -42,7 +42,6 @@
   states.paper-size.update(book-options.paper-size)
   states.part-numbering.update(book-options.part-numbering)
   states.par-indent.update(book-options.par-indent)
-  // states.show-cover-author.update(book-options.show-cover-author)
 
   // Fonts
   let bookly-fonts = default-fonts + fonts
@@ -84,6 +83,9 @@
   // show footnote.entry: it => {
   //   [#h(it.indent) #text(fill: book-colors.primary, it.note) #it.note.body]
   // }
+
+  // Hide short titles by default
+  show metadata.where(label: <bookly-title>): it => it.value.long
 
   // Outline entries
   set outline(depth: 3)

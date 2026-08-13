@@ -1,5 +1,5 @@
-// #import "@preview/bookly:3.2.0": *
-#import "../../src/bookly.typ": *
+#import "@preview/bookly:4.1.4": *
+// #import "../../src/bookly.typ": *
 
 // #show: chapter.with(title: "Second chapter")
 

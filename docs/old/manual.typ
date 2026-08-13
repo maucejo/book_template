@@ -894,7 +894,7 @@ Then, you can initialize the template with your custom theme as follows:
 
 - `states.counter-part` -- #dtype(str): Counter for parts.
 
-- `states.in-outline` -- #dtype(bool): Indicates whether the current section is in the outline.
+- `states.is-short` -- #dtype(bool): Indicates whether the current section is in the outline.
 
 - `states.isappendix` -- #dtype(bool): Indicates whether the current section is an appendix.
 

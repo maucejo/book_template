@@ -1,11 +1,5 @@
-// #import "@preview/bookly:3.2.0": *
-#import "../../src/bookly.typ": *
-
-// #show: chapter.with(
-//   title: "Introduction",
-//   abstract: [#lorem(50)],
-//   numbered: false
-// )
+#import "@preview/bookly:4.1.4": *
+// #import "../../src/bookly.typ": *
 
 #show: chapter-nonum.with()
 = Introduction
@@ -26,7 +20,7 @@ $
 
 #figure(
 image("../images/typst-logo.svg", width: 75%),
-caption: [#ls-caption([#lorem(10)], [#lorem(2)])],
+caption: [#short-or-long([#lorem(10)], [#lorem(2)])],
 ) <fig:intro>
 
 #lorem(50) (cf. Figure @fig:intro)

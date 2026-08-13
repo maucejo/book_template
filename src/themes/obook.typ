@@ -109,7 +109,7 @@
     show linebreak: none
     if it.element.func() == heading {
       let number = it.prefix()
-      let is-part = states.in-outline.at(it.element.location())
+      let is-part = states.is-short.at(it.element.location())
       let item = none
       if it.level == 1 {
         block(above: 1.25em, below: 0em)
@@ -251,7 +251,7 @@ let page-header = context {
   ]
 
   show heading: none
-  states.in-outline.update(true)
+  states.is-short.update(true)
   heading(numbering: none)[
     #let part-num-outline = if states.part-numbering.get() != none {box(fill: states.colors.get().primary.lighten(75%), inset: 0.5em)[#states.counter-part.display(states.part-numbering.get())] } else { none }
 
@@ -267,7 +267,7 @@ let page-header = context {
       ]
     )
   ]
-  states.in-outline.update(false)
+  states.is-short.update(false)
 
   align(bottom + right)[
     #show: show-if(states.tufte.get(), it => {

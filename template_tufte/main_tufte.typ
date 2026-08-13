@@ -1,3 +1,4 @@
+// #import "@preview/bookly:4.1.4": *
 #import "../src/bookly.typ": *
 
 #let config-colors = (
@@ -39,15 +40,15 @@
 
 #tableofcontents
 
-#listoffigures
+// #listoffigures
 
-#listoftables
+// #listoftables
 
 #part("First part")
 
 #include "chapters_tufte/ch_main_tufte.typ"
 
-#part("Second part")// #part("Second part")
+#part("Second part")
 
 #show: appendix
 

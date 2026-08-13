@@ -7,7 +7,6 @@
   // show-cover-author: state("show-cover-author", true),
   colors: state("theme-colors"),
   counter-part: counter("part"),
-  in-outline: state("in-outline", false),
   isappendix: state("isappendix", false),
   isfrontmatter: state("isfrontmatter", false),
   localization: state("localization"),

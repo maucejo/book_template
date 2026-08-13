@@ -92,7 +92,7 @@ If you want to reuse and combine elements of the existing themes, you can simply
 
 - `states.counter-part` -- #mtype("string"): Counter for parts.
 
-- `states.in-outline` -- #mtype("bool"): Indicates whether the current section is in the outline.
+- `states.is-short` -- #mtype("bool"): Indicates whether the current section is in the outline.
 
 - `states.isappendix` -- #mtype("bool"): Indicates whether the current section is an appendix.
 
