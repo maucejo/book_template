@@ -15,7 +15,7 @@
   // theme: classic,
   // theme: fancy,
   // theme: modern,
-  theme: orly,
+  // theme: orly,
   // theme: pretty,
   tufte: true,
   // lang: "fr",
@@ -27,7 +27,7 @@
     cover: image("images/book-cover.jpg", width: 45%)
   ),
   config-options: (
-    open-right: true,
+    open-right: false,
     alt-margins: false,
   )
 )
