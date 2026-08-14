@@ -180,7 +180,7 @@
   })
 
 
-  // show: marginalia.show-frame.with(footer: false)
+  show: marginalia.show-frame.with(footer: false)
 
   // Headings
   show: theme.theme.with(colors: book-colors)
