@@ -12,7 +12,7 @@
   lang: "en",
   title-page: book-title-page(
     subtitle: "User's guide",
-    edition: "Version 4.1.3",
+    edition: "Version 5.0.0",
     series: " Typst book series",
     institution: "Typst community",
     logo: image("manual-images/typst-logo.svg"),

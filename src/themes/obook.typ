@@ -109,7 +109,7 @@
     show linebreak: none
     if it.element.func() == heading {
       let number = it.prefix()
-      let is-part = states.is-short.at(it.element.location())
+      let is-part = states.is-toc-part.at(it.element.location())
       let item = none
       if it.level == 1 {
         block(above: 1.25em, below: 0em)
@@ -146,6 +146,7 @@ let page-header = context {
   // No header on chapter opening pages
   if is-chapter-page() { return }
 
+  show metadata.where(label: <bookly-title>): it => it.value.short
   show linebreak: none
 
   let length = 100%
@@ -251,7 +252,7 @@ let page-header = context {
   ]
 
   show heading: none
-  states.is-short.update(true)
+  states.is-toc-part.update(true)
   heading(numbering: none)[
     #let part-num-outline = if states.part-numbering.get() != none {box(fill: states.colors.get().primary.lighten(75%), inset: 0.5em)[#states.counter-part.display(states.part-numbering.get())] } else { none }
 
@@ -267,7 +268,7 @@ let page-header = context {
       ]
     )
   ]
-  states.is-short.update(false)
+  states.is-toc-part.update(false)
 
   align(bottom + right)[
     #show: show-if(states.tufte.get(), it => {
@@ -277,9 +278,9 @@ let page-header = context {
     #partial-outline
   ]
 
-  if states.open-right.get() {
-    pagebreak(weak: true, to:"odd")
-  }
+  // if states.open-right.get() {
+  //   pagebreak(weak: true, to:"odd")
+  // }
 }
 
 // Minitoc
@@ -323,4 +324,4 @@ let page-header = context {
 
 #let obook-boxeq(body) = context _boxeq(stroke: 1pt + states.colors.get().primary, fill: states.colors.get().boxeq.lighten(30%), radius: 5pt, body)
 
-#let obook = (theme: obook-theme, part: obook-part, minitoc: obook-minitoc, box: obook-custom-box, boxeq: obook-boxeq)
+#let obook = (theme: obook-theme, part: obook-part, minitoc: obook-minitoc, custom-box: obook-custom-box, boxeq: obook-boxeq)

@@ -17,7 +17,7 @@ This section provides the minimal amount of information to get started with the 
 To use the `bookly` template, you need to include the following line at the beginning of your typ file:
 
 ```typ
-#import "@preview/bookly:4.1.4": *
+#import "@preview/bookly:5.0.0": *
 ```
 
 After importing `bookly`, you have to initialize the template by a show rule with the `#bookly()` command.

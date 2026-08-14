@@ -185,8 +185,8 @@
     // No header on chapter opening pages
     if is-chapter-page() { return }
 
+    show metadata.where(label: <bookly-title>): it => it.value.short
     show linebreak: none
-
     show: show-if(states.tufte.get(), it => {
       show: wideblock.with(side: "both")
       it
@@ -325,9 +325,9 @@
     #box(width: 95%, stroke: (top: 0.5pt + states.colors.get().primary, left: 0.5pt + states.colors.get().primary), inset: 00.5em, radius: (top-left: 0.5em))[#text(fill:states.colors.get().primary)[#content]]
   ]
 
-  if states.open-right.get() {
-    pagebreak(weak: true, to:"odd")
-  }
+  // if states.open-right.get() {
+  //   pagebreak(weak: true, to:"odd")
+  // }
 }
 
 // Minitoc
@@ -359,4 +359,4 @@
 
 #let pretty-boxeq(body) = context _boxeq(stroke: 1pt + states.colors.get().primary, fill: states.colors.get().boxeq.lighten(35%), radius: (top-left: 2em, bottom-right: 2em, rest: 0em), body)
 
-#let pretty = (theme: pretty-theme, part: pretty-part, minitoc: pretty-minitoc, box: pretty-custom-box, boxeq: pretty-boxeq)
+#let pretty = (theme: pretty-theme, part: pretty-part, minitoc: pretty-minitoc, custom-box: pretty-custom-box, boxeq: pretty-boxeq)

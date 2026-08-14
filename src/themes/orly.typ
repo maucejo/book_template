@@ -87,6 +87,8 @@
     let chapter-heading = query(heading.where(level: 1).before(here())).last()
     let hcontent = none
 
+    show metadata.where(label: <bookly-title>): it => it.value.short
+    show linebreak: none
     show: show-if(states.tufte.get(), it => {
       show: wideblock.with(side: "both")
       it
@@ -181,9 +183,9 @@
     #box[#content]
   ]
 
-  if states.open-right.get() {
-    pagebreak(weak: true, to:"odd")
-  }
+  // if states.open-right.get() {
+  //   pagebreak(weak: true, to:"odd")
+  // }
 }
 
 #let orly-minitoc = context {
@@ -207,4 +209,4 @@
 
 #let orly-boxeq(body) = context _boxeq(stroke: 1pt, radius: 5pt, body)
 
-#let orly = (theme: orly-theme, part: orly-part, minitoc: orly-minitoc, box: orly-custom-box, boxeq: orly-boxeq)
+#let orly = (theme: orly-theme, part: orly-part, minitoc: orly-minitoc, custom-box: orly-custom-box, boxeq: orly-boxeq)

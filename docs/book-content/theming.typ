@@ -15,7 +15,7 @@ To implement a custom theme, you have to define a function that includes the `sh
 #code-box[
 ```typ
 // my-theme.typ
-#import "@preview/bookly:4.1.4": *
+#import "@preview/bookly:5.0.0": *
 
 #let my-theme(colors: default-colors, it) = {
 	// Update the theme state
@@ -50,10 +50,10 @@ To implement a custom theme, you have to define a function that includes the `sh
 #let my-minitoc = {...}
 
 // Custom box style
-#let my-box(title: none, icon: "info", color: rgb(29, 144, 208), body) = {...}
+#let my-custom-box(title: none, icon: "info", color: rgb(29, 144, 208), body) = {...}
 
 // Template dictionary
-#let custom-theme = (theme: my-theme, part: my-part, minitoc: my-minitoc, box: my-box)
+#let custom-theme = (theme: my-theme, part: my-part, minitoc: my-minitoc, custom-box: my-custom-box)
 ```
 ]
 
@@ -74,10 +74,8 @@ Then, you can initialize the template with your custom theme as follows:
 If you want to reuse and combine elements of the existing themes, you can simply use it in the definition of your custom theme #mtype("dictionary").
 
 #code-box[```typ
-#let custom = (theme: pretty-theme, part: obook-part, minitoc: modern-minitoc, box: orly-custom-box, boxeq: pretty-boxeq)
+#let custom = (theme: pretty.theme, part: obook.part, minitoc: modern.minitoc, custom-box: orly.custom-box, boxeq: pretty.boxeq)
 ```]
-
-#info-box[The naming convention for the theming elements is as follows: `theme-name-part`, `theme-name-minitoc`, `theme-name-box`, `theme-name-boxeq`. For example, the part function of the `obook` theme is called `obook-part`.]
 
 == Template states
 
@@ -92,7 +90,7 @@ If you want to reuse and combine elements of the existing themes, you can simply
 
 - `states.counter-part` -- #mtype("string"): Counter for parts.
 
-- `states.is-short` -- #mtype("bool"): Indicates whether the current section is in the outline.
+- `states.is-toc-part` -- #mtype("bool"): Indicates whether the current section is a part in the table of contents.
 
 - `states.isappendix` -- #mtype("bool"): Indicates whether the current section is an appendix.
 

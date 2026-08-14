@@ -172,11 +172,8 @@
   show: show-if(tufte, it => {
     let marginalia-book = if book-options.alt-margins {true} else {false}
 
-    let m-config = (
-    inner: (far: 1.25cm, width: 0cm, sep: 0cm),
-    outer: (far: 1.25cm, width: 5cm, sep: 0.5cm),
-    book: marginalia-book
-    )
+    let m-config = margin-notes-config + (book: marginalia-book)
+    // let m-config = margin-notes-config + (book: false)
 
     show: marginalia.setup.with(..m-config)
     it

@@ -4,11 +4,11 @@
 #let states = (
   alt-margins: state("alt-margins", false),
   author: state("author", none),
-  // show-cover-author: state("show-cover-author", true),
   colors: state("theme-colors"),
   counter-part: counter("part"),
   isappendix: state("isappendix", false),
   isfrontmatter: state("isfrontmatter", false),
+  is-toc-part: state("is-toc-part", false),
   localization: state("localization"),
   num-heading: state("num-heading", "1"),
   num-pattern: state("num-pattern", "1.1."),
@@ -66,3 +66,9 @@
     #text(size: 1.5em)[#states.author.get()]
   ]
 }
+
+// margin notes configuration for Tufte layout
+#let margin-notes-config = (
+  inner: (far: 1.25cm, width: 0cm, sep: 0cm),
+  outer: (far: 1.25cm, width: 5cm, sep: 0.5cm),
+)

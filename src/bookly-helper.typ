@@ -88,7 +88,7 @@
 
   // Find the next part phantom heading (level 1 with is-short == true)
   let future-h1 = query(selector(heading.where(level: 1)).after(cur-loc, inclusive: false))
-  let next-parts = future-h1.filter(h => states.is-short.at(h.location()))
+  let next-parts = future-h1.filter(h => states.is-toc-part.at(h.location()))
 
   // Build target: all outlined headings in this part, depth 2 max
   let target = if next-parts.len() > 0 {

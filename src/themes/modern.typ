@@ -155,8 +155,9 @@
   // Page style
   let page-header = context {
     set par(first-line-indent: 0em) if states.par-indent.get()
-    show linebreak: none
 
+    show metadata.where(label: <bookly-title>): it => it.value.short
+    show linebreak: none
     show: show-if(states.tufte.get(), it => {
       show: wideblock.with(side: "both")
       it
@@ -319,9 +320,9 @@
     #box[#content]
   ]
 
-  if states.open-right.get() {
-    pagebreak(weak: true, to:"odd")
-  }
+  // if states.open-right.get() {
+  //   pagebreak(weak: true, to:"odd")
+  // }
 }
 
 #let modern-minitoc = context {
@@ -342,5 +343,5 @@
 
 #let modern-boxeq(body) = context _boxeq(stroke: 1pt + states.colors.get().primary, fill: states.colors.get().primary.lighten(90%), radius: 5pt, body)
 
-#let modern = (theme: modern-theme, part: modern-part, minitoc: modern-minitoc, box: modern-custom-box, boxeq: modern-boxeq)
+#let modern = (theme: modern-theme, part: modern-part, minitoc: modern-minitoc, custom-box: modern-custom-box, boxeq: modern-boxeq)
 

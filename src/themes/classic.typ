@@ -93,6 +93,8 @@
   // Page style
   let page-header = context {
     set par(first-line-indent: 0em) if states.par-indent.get()
+
+    show metadata.where(label: <bookly-title>): it => it.value.short
     show linebreak: none
 
     let length = 100%
@@ -205,9 +207,9 @@
     #box[#content]
   ]
 
-  if states.open-right.get() {
-    pagebreak(weak: true, to:"odd")
-  }
+  // if states.open-right.get() {
+  //   pagebreak(weak: true, to:"odd")
+  // }
 }
 
 #let classic-minitoc = context {
@@ -228,4 +230,4 @@
 
 #let classic-boxeq(body) = context _boxeq(stroke: 0.75pt, body)
 
-#let classic = (theme: classic-theme, part: classic-part, minitoc: classic-minitoc, box: classic-custom-box, boxeq: classic-boxeq)
+#let classic = (theme: classic-theme, part: classic-part, minitoc: classic-minitoc, custom-box: classic-custom-box, boxeq: classic-boxeq)

@@ -9,16 +9,16 @@ This chapter provides an overview of the helper functions available in the `book
 
 #pagebreak()
 
-== Figure captions
+== Short or long titles
 
-The package include the command #cmd("ls-caption") to manage long and short captions for figures and tables. Short caption are displayed in the list of figures or tables, while long captions are used in the main text and in the table of contents.
+The package include the command #cmd("short-or-long") to manage long and short titles. If applied to a heading, the short title is used in the header/footer. If applied to a figure or a table, the short caption is displayed in the list of figures or tables, while the long caption is used in the main text.
 
 #v(1em)
 #example-box[
 ```typ
 #figure(
   rect(),
-  caption: ls-caption("Long caption", "Short caption")
+  caption: short-or-long("Short caption", "Long caption")
 )
 
 See the list of figures for the short caption.
@@ -26,13 +26,11 @@ See the list of figures for the short caption.
 ][
 #figure(
   rect(),
-  caption: ls-caption("Long caption", "Short caption")
+  caption: short-or-long("Short caption", "Long caption")
 )
 
 See the list of figures for the short caption.
 ]
-
-#info-box[The code of the command #cmd("ls-caption") comes from the #link("https://sitandr.github.io/typst-examples-book/book/snippets/chapters/outlines.html?highlight=long#long-and-short-captions-for-the-outline", "Typst book") by Sitandr.]
 
 == Subfigures
 

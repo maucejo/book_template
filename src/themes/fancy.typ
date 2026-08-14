@@ -12,11 +12,6 @@
     // Reset counters
     reset-counters
 
-    // Heading style
-    // place(top)[
-    //   #rect(fill: white, width: 1%, height: 1%)
-    // ]
-
     set align(right)
     set underline(stroke: 2pt + colors.secondary, offset: 8pt)
 
@@ -135,11 +130,13 @@
     // No header on chapter opening pages
     if is-chapter-page() { return }
 
+    show metadata.where(label: <bookly-title>): it => it.value.short
     show linebreak: none
     show: show-if(states.tufte.get(), it => {
       show: wideblock.with(side: "both")
       it
     })
+
     set text(style: "italic", fill: colors.header)
     if calc.odd(here().page()) {
       align(right, hydra(2))
@@ -241,9 +238,9 @@
     #box[#text(fill:states.colors.get().primary)[#content]]
   ]
 
-  if states.open-right.get() {
-    pagebreak(weak: true, to:"odd")
-  }
+  // if states.open-right.get() {
+  //   pagebreak(weak: true, to:"odd")
+  // }
 }
 
 // Minitoc
@@ -265,4 +262,4 @@
 
 #let fancy-boxeq(body) = context _boxeq(stroke: 1pt + states.colors.get().boxeq.darken(35%), fill: states.colors.get().boxeq, radius: 5pt, body)
 
-#let fancy = (theme: fancy-theme, part: fancy-part, minitoc: fancy-minitoc, box: fancy-custom-box, boxeq: fancy-boxeq)
+#let fancy = (theme: fancy-theme, part: fancy-part, minitoc: fancy-minitoc, custom-box: fancy-custom-box, boxeq: fancy-boxeq)

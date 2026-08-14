@@ -1,4 +1,4 @@
-// #import "@preview/bookly:4.1.4": *
+// #import "@preview/bookly:5.0.0": *
 #import "../src/bookly.typ": *
 
 #let config-colors = (
@@ -15,8 +15,8 @@
   // theme: classic,
   // theme: fancy,
   // theme: modern,
-  // theme: orly,
-  theme: pretty,
+  theme: orly,
+  // theme: pretty,
   tufte: true,
   // lang: "fr",
   // colors: config-colors,
@@ -27,8 +27,8 @@
     cover: image("images/book-cover.jpg", width: 45%)
   ),
   config-options: (
-    open-right: false,
-    alt-margins: true,
+    open-right: true,
+    alt-margins: false,
   )
 )
 
@@ -40,9 +40,9 @@
 
 #tableofcontents
 
-// #listoffigures
+#listoffigures
 
-// #listoftables
+#listoftables
 
 #part("First part")
 
@@ -54,7 +54,7 @@
 
 #include "appendix_tufte/app_main_tufte.typ"
 
-// #bibliography("bibliography/sample.yml")
+// // #bibliography("bibliography/sample.yml")
 #bibliography("bibliography/sample.bib")
 
 #let abstracts-fr-en = (

@@ -1,10 +1,10 @@
 #import "bookly-defaults.typ": *
-#import "themes/classic.typ": *
-#import "themes/fancy.typ": *
-#import "themes/modern.typ": *
-#import "themes/obook.typ": *
-#import "themes/orly.typ": *
-#import "themes/pretty.typ": *
+#import "themes/classic.typ": classic
+#import "themes/fancy.typ": fancy
+#import "themes/modern.typ": modern
+#import "themes/obook.typ": obook
+#import "themes/orly.typ": orly
+#import "themes/pretty.typ": pretty
 
 // Part
 #let part(title) = context (states.theme.get().part)(title)
@@ -16,7 +16,7 @@
 #let boxeq(content) = context (states.theme.get().boxeq)(content)
 
 // Custom box
-#let custom-box(title: none, icon: "info", color: rgb(29, 144, 208), body) = context (states.theme.get().box)(title: title, icon: icon, color: color, body)
+#let custom-box(title: none, icon: "info", color: rgb(29, 144, 208), body) = context (states.theme.get().custom-box)(title: title, icon: icon, color: color, body)
 
 // Information box
 #let info-box = custom-box.with(title: context states.localization.get().note)

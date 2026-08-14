@@ -31,8 +31,17 @@
   states.num-pattern-subfig.update("1.1a")
   states.num-pattern-eq.update("(1.1a)")
 
+  // if states.open-right.get() {
+  //   counter(page).update(0)
+  // } else {
+  //   counter(page).update(1)
+  // }
   if states.open-right.get() {
-    counter(page).update(0)
+    if states.tufte.get() {
+      counter(page).update(1)
+    } else {
+      counter(page).update(0)
+    }
   } else {
     counter(page).update(1)
   }

@@ -32,7 +32,7 @@ Figure @fig:1-fancy is a beautiful typst logo.
 
 #figure(
 image("../manual-images/typst-logo.svg", width: 75%),
-caption: [#ls-caption([#lorem(10)], [#lorem(2)])],
+caption: [#short-or-long([#lorem(10)], [#lorem(2)])],
 ) <fig:1-fancy>
 
 Figure @fig:subfig-fancy the Typst logo. Figure @b-fancy is a Typst logo.
