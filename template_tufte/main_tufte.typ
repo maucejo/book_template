@@ -1,5 +1,5 @@
-// #import "@preview/bookly:5.0.0": *
-#import "../src/bookly.typ": *
+#import "@preview/bookly:5.0.0": *
+// #import "../src/bookly.typ": *
 
 #let config-colors = (
   primary: rgb("#1d90d0"),
@@ -28,7 +28,7 @@
   ),
   config-options: (
     open-right: false,
-    alt-margins: false,
+    alt-margins: true,
   )
 )
 

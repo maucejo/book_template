@@ -1,5 +1,5 @@
 #import "@preview/bookly:5.0.0": *
-// #import "custom-theme.typ": custom
+#import "custom-theme.typ": custom
 
 #let config-colors = (
   primary: rgb("#1d90d0"),
@@ -13,12 +13,12 @@
     body: "Lato",
     math: "Lete Sans Math"
   ),
-  // theme: custom,
+  theme: custom,
   // theme: classic,
   // theme: fancy,
   // theme: modern,
   // theme: obook,
-  theme: orly,
+  // theme: orly,
   // theme: pretty,
   // tufte: true,
   lang: "en",
@@ -35,7 +35,7 @@
     open-right: true,
     par-indent: true,
     // show-cover-author: true,
-//     paper-size: "a5",
+    paper-size: "a5",
     // alt-margins: true,
     // part-numbering: none
   )

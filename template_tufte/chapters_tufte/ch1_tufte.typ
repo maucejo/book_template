@@ -1,5 +1,5 @@
-// #import "@preview/bookly:5.0.0": *
-#import "../../src/bookly.typ": *
+#import "@preview/bookly:5.0.0": *
+// #import "../../src/bookly.typ": *
 
 = First chapter
 #lorem(100)
