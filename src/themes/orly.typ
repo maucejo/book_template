@@ -154,7 +154,7 @@
   }
 
   let part = [
-
+    #set par(justify: false) if not states.justify-headings.get()
     #if states.part-numbering.get() != none {
       text(size: 1.75em)[*#upper[#states.localization.get().part] #states.counter-part.display(states.part-numbering.get())*]
     } else {

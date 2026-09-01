@@ -302,6 +302,7 @@
   ]
 
   place(center + horizon)[
+    #set par(justify: false) if not states.justify-headings.get()
     #show: wideblock.with(side: "both")
     #box(outset: 1.25em, stroke: none, radius: 50%, fill: states.colors.get().primary)[
       #set text(fill: white, weight: "bold", size: 3em)

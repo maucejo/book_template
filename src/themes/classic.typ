@@ -189,6 +189,7 @@
   }
 
   wideblock(side: "both")[
+    #set par(justify: false) if not states.justify-headings.get()
     #if states.part-numbering.get() != none [
       #text(size: 2.5em)[#states.localization.get().part #states.counter-part.display(states.part-numbering.get())]
     #v(1em)

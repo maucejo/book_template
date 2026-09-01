@@ -223,6 +223,7 @@
       #line(stroke: 1.75pt + states.colors.get().primary, length: mid-length)
     ]
 
+    #set par(justify: false) if not states.justify-headings.get()
     #text(size: 3em)[*#title*]
     #line(stroke: 1.75pt + states.colors.get().primary, length: top-length)
   ]
