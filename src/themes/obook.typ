@@ -236,6 +236,7 @@ let page-header = context {
   } else {
     none
   }
+  set par(justify: false) if not states.justify-headings.get()
   let part-title = text(size: 3em)[*#title*]
 
   align(top)[

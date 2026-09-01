@@ -9,6 +9,7 @@
   isappendix: state("isappendix", false),
   isfrontmatter: state("isfrontmatter", false),
   is-toc-part: state("is-toc-part", false),
+  justify-headings: state("justify-headings", true),
   localization: state("localization"),
   num-heading: state("num-heading", "1"),
   num-pattern: state("num-pattern", "1.1."),
@@ -35,6 +36,7 @@
   par-indent: false,
   paper-size: "a4",
   show-cover-author: true,
+  justify-headings: true,
 )
 
 #let default-fonts = (

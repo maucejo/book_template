@@ -3,7 +3,7 @@
 #import "../bookly-defaults.typ": *
 
 #let orly-theme(colors: default-colors, it) = {
-    show heading.where(level:1): it => {
+  show heading.where(level:1): it => {
     if not states.open-right.get() {
       pagebreak(weak: true)
     }
@@ -154,7 +154,7 @@
   }
 
   let part = [
-
+    #set par(justify: false) if not states.justify-headings.get()
     #if states.part-numbering.get() != none {
       text(size: 1.75em)[*#upper[#states.localization.get().part] #states.counter-part.display(states.part-numbering.get())*]
     } else {

@@ -42,6 +42,7 @@
   states.paper-size.update(book-options.paper-size)
   states.part-numbering.update(book-options.part-numbering)
   states.par-indent.update(book-options.par-indent)
+  states.justify-headings.update(book-options.justify-headings)
 
   // Fonts
   let bookly-fonts = default-fonts + fonts
@@ -188,6 +189,7 @@
     show: headings-on-odd-page
     it
   })
+  show heading.where(level: 1): set par(justify: false) if not book-options.justify-headings
 
   // Unnumbered sections - Thanks to @bluss (Typst universe: How to have headings without numbers in a fluent way?)
   show selector(<nonum-sec>): set heading(numbering: none)

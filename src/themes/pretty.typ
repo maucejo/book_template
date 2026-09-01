@@ -309,6 +309,7 @@
     dir: ttb,
     part-name,
     box(width: width, inset: 5em, stroke: 2pt + states.colors.get().primary, radius: 2em)[
+    #set par(justify: false) if not states.justify-headings.get()
     #set text(size: 3em)
 
     *#title*
