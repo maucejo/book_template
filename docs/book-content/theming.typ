@@ -15,7 +15,7 @@ To implement a custom theme, you have to define a function that includes the `sh
 #code-box[
 ```typ
 // my-theme.typ
-#import "@preview/bookly:5.0.0": *
+#import "@preview/bookly:5.1.0": *
 
 #let my-theme(colors: default-colors, it) = {
 	// Update the theme state

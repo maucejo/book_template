@@ -4,16 +4,12 @@
 #let outline-entry(it) = {
   set par(first-line-indent: 0em) if states.par-indent.get()
 
-  // if states.tufte.get() {
-  //   wideblock(side: "both")[#it]
-  // } else {
-  //   it
-  // }
   it
 }
 
 // Table of contents
 #let tableofcontents = context {
+  show metadata.where(label: <bookly-title>): it => it.value.short
   show outline.entry: outline-entry
   outline(title: states.localization.get().toc, indent: 1em)
 }

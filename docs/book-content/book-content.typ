@@ -42,7 +42,7 @@ Based on the structure defined in the previous section, the main `main.typ` file
 #code-box[
 ```typ
 // main.typ
-#import "@preview/bookly:5.0.0": *
+#import "@preview/bookly:5.1.0": *
 
 #show: bookly.with(...)
 
