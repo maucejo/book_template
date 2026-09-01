@@ -3,7 +3,7 @@
 #import "../bookly-defaults.typ": *
 
 #let orly-theme(colors: default-colors, it) = {
-    show heading.where(level:1): it => {
+  show heading.where(level:1): it => {
     if not states.open-right.get() {
       pagebreak(weak: true)
     }
