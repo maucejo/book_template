@@ -115,7 +115,7 @@ After importing `bookly`, you have to initialize the template by a show rule wit
 
 * `showybox:2.0.4` : for custom boxes.
 
-* `suboutline:0.3.0` : for mini tables of contents in chapters.
+* `suboutline:0.3.1` : for mini tables of contents in chapters.
 
 * `subpar:0.2.2` : for subfigures.
 
