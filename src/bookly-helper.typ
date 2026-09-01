@@ -238,7 +238,7 @@
   logo: none
 ) = context {
   set page(
-      paper: paper-size,
+      paper: states.paper-size.get(),
       header: none,
       footer: none,
       margin: auto
