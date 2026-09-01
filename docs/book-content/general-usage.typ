@@ -101,15 +101,17 @@ Supported languages:
 #argument("title-page", default: "default-title-page", type: mtype("content"))[Content of the title page.]
 
 #argument("config-options", default: "default-config-options", type: mtype("dictionary"))[Configuration options of the document. It allows a more fine-grained control of some aspects of the template. It contains the following keys:
-  - `part-numbering` #mtype("string") -- Numbering pattern (default: "1")
-  - `open-right` #mtype("bool") -- If `true`, parts start on a right-hand page (default: `true`)
-  - `alt-margins` #mtype("bool") -- If `true`, margins are alternated for odd and even pages when `tufte` is enabled (default: `false`)
-  - `paper-size` #mtype("string") -- Size of the paper (default: `"a4"`).
-  - `par-indent` #mtype("bool") -- If `true`, paragraphs are indented (default: `false`)
+	- `alt-margins` #mtype("bool") -- If `true`, margins are alternated for odd and even pages when `tufte` is enabled (default: `false`)
+	- `justify-headings` #mtype("bool") -- If `true`, headings are justified (default: `true`)
+	- `open-right` #mtype("bool") -- If `true`, parts start on a right-hand page (default: `true`)
+	- `paper-size` #mtype("string") -- Size of the paper (default: `"a4"`)
+	- `par-indent` #mtype("bool") -- If `true`, paragraphs are indented (default: `false`)
+	- `part-numbering` #mtype("string") -- Numbering pattern (default: "1")
 
     #info-box[If `part-numbering` is set to #mtype("none"), the parts are not numbered. If it is set to `"1"`, the parts are numbered with Arabic numerals. If it is set to `"I"`, the parts are numbered with Roman numerals. Other numbering patterns are possible.]
 ]
 
+#pagebreak()
 *Initialization example*
 #code-box[
 ```typ
